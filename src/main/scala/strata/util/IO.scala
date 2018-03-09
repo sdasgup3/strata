@@ -66,6 +66,7 @@ object IO {
    * Uses the base directory as working directory by default.
    */
   def runQuiet(cmd: Seq[Any], workingDirectory: File = null): (String, Int) = {
+    IO.info(s"Running command '${cmd2String(cmd)}'")
     run(cmd, x => (), x => (), workingDirectory = workingDirectory)
   }
 
@@ -74,7 +75,8 @@ object IO {
    * Uses the base directory as working directory by default.
    */
   def runPrint(cmd: Seq[Any], workingDirectory: File = null, noStatus: Boolean = false): (String, Int) = {
-    if (!noStatus) IO.info(s"Running command '${cmd2String(cmd)}'")
+    //if (!noStatus) IO.info(s"Running command '${cmd2String(cmd)}'")
+    IO.info(s"Running command '${cmd2String(cmd)}'")
     run(cmd, s => print(s.gray), s => print(s.red), workingDirectory = workingDirectory)
   }
 
@@ -84,7 +86,8 @@ object IO {
     for (a <- 1 to 6) {
       res = res.substring(0, res.lastIndexOf('/'))
     }
-    new File(res)
+    //new File(res)
+    new File("/home/sdasgup3/Github/strata")
   }
 
   /** Output an error message and exit. */

@@ -380,7 +380,7 @@ object Strata {
 /**
  * Command line argument class.
  */
-case class GlobalOptions(workdirPath: String = s"${System.getProperty("user.home")}/dev/output-strata",
+case class GlobalOptions(workdirPath: String = s"${System.getProperty("user.home")}/Github/strata-data/output-strata/",
                          verbose: Boolean = false, keepTmpDirs: Boolean = false) {
   val workdir = new File(workdirPath).getAbsoluteFile
 }

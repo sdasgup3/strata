@@ -88,6 +88,7 @@ case class Stoke(tmpDir: File, meta: InstructionMeta, instr: Instruction, state:
       }
     })
 
+    IO.info(s"Search Pool: '$baseConfig'")
     IO.writeFile(baseConfig, "--opc_whitelist \"{ " + base.mkString(" ") + " }\"\n")
     base.length
   }
